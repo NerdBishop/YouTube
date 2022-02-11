@@ -1,0 +1,29 @@
+1. Install 32bit Raspberry Pi OS on SD Card
+
+2. create the a file named ssh on the boot drive of the SD Card with the OS{dont type anything into the ssh file...just a blank file named ssh}
+
+3. run the following commands:
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install wvdial
+sudo apt-get install ppp
+
+4. add the following to /etc/wvdial.conf by running the command:
+sudo nano /etc/wvdial.conf
+
+[Dialer mtn]
+Init1 = ATZ
+Init2 = ATQ0 V1 E1 S0=0
+Init3 = AT+CGDCONT=1,"IP","internet"
+Stupid Mode = yes
+Modem Type = Analog Modem
+ISDN = 0
+Phone = *99#
+Modem = /dev/ttyUSB1
+Username = { }
+Password = { }
+Baud = 9600
+New PPPD = yes
+
+NOTE: you can change /dev/ttyUSB1 to /dev/ttyUSB0 or to the number your modem is on. Also the work mtn in the dialer heading can be changed to whatever you want.
+
