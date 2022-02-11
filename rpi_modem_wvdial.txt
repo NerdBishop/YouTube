@@ -8,8 +8,9 @@ sudo apt-get upgrade
 sudo apt-get install wvdial
 sudo apt-get install ppp
 
-4. add the following to /etc/wvdial.conf by running the command:
-sudo nano /etc/wvdial.conf
+4.run the command: sudo nano /etc/wvdial.conf
+
+5. add the following to /etc/wvdial.conf
 
 [Dialer mtn]
 Init1 = ATZ
@@ -26,4 +27,31 @@ Baud = 9600
 New PPPD = yes
 
 NOTE: you can change /dev/ttyUSB1 to /dev/ttyUSB0 or to the number your modem is on. Also the work mtn in the dialer heading can be changed to whatever you want.
+
+6. now run the command: sudo wvdial mtn
+
+voila!!!!
+
+7. run the command: sudo nano /etc/rc.local
+
+8. add the following to the end of the line right befor exit 0
+
+sudo wvdial mtn &
+
+
+9. creating the hotspot. run the commands below.
+sudo cp /etc/wpa_supplicant/wpa_supplicant.conf /etc/wpa_supplicant/wpa_supplicant.conf.sav
+sudo cp /dev/null /etc/wpa_supplicant/wpa_supplicant.conf
+
+run the command: sudo nano /etc/wpa_supplicant/wpa_supplicant.conf
+
+add the following lines
+
+ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+update_config=1
+
+10. run the command: wget -q https://git.io/voEUQ -O /tmp/raspap && bash /tmp/raspap
+follow the prompts and install
+
+
 
