@@ -34,7 +34,7 @@ voila!!!!
 
 7. run the command: sudo nano /etc/rc.local
 
-8. add the following to the end of the line right befor exit 0
+8. add the following to the end of the line right before exit 0
 
 sudo wvdial mtn &
 
