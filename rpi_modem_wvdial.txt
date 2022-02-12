@@ -16,7 +16,7 @@ sudo apt-get install ppp
 Init1 = ATZ
 Init2 = ATQ0 V1 E1 S0=0
 Init3 = AT+CGDCONT=1,"IP","internet"
-Stupid Mode = yes
+Stupid Mode = 1
 Modem Type = Analog Modem
 ISDN = 0
 Phone = *99#
@@ -53,5 +53,4 @@ update_config=1
 10. run the command: wget -q https://git.io/voEUQ -O /tmp/raspap && bash /tmp/raspap
 follow the prompts and install
 
-
-
+11.
