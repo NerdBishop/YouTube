@@ -80,7 +80,7 @@ WantedBy=multi-user.target
 
 19. sudo systemctl status mtn_modem.service [active and running]
 
-20 
+20. 
 
 # configuring network address translation 
 # replace ppp0 with interface of source of internet
