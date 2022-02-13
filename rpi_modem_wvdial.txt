@@ -53,4 +53,5 @@ update_config=1
 10. run the command: wget -q https://git.io/voEUQ -O /tmp/raspap && bash /tmp/raspap
 follow the prompts and install
 
-11.
+11. Create modem.py file with a countdown timer of 30 seconds...executes command:sudo wvdial mtn 
+do chmod +x modem.py to make the file executable
