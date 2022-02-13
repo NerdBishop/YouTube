@@ -99,3 +99,7 @@ iptables -A FORWARD -i eth0 -o ppp0 -j ACCEPT
 sh -c "iptables-save > /etc/iptables.ipv4.nat"
 
 21. sudo reboot
+
+sudo iptables -A POSTROUTING -t nat -s address/mask -o internet_interface -j MASQUERADE
+where adress/mask is a address range who don't have the internet access, and then internet_interface is the interface who have the internet access. Example of this rule :
+sudo iptables -A POSTROUTING -t nat -s 192.168.7.0/24 -o ppp0 -j MASQUERADE
